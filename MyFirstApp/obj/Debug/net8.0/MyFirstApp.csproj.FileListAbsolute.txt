@@ -12,3 +12,4 @@ C:\Users\kapae\Desktop\MyFirstApp\MyFirstApp\obj\Debug\net8.0\refint\MyFirstApp.
 C:\Users\kapae\Desktop\MyFirstApp\MyFirstApp\obj\Debug\net8.0\MyFirstApp.pdb
 C:\Users\kapae\Desktop\MyFirstApp\MyFirstApp\obj\Debug\net8.0\MyFirstApp.genruntimeconfig.cache
 C:\Users\kapae\Desktop\MyFirstApp\MyFirstApp\obj\Debug\net8.0\ref\MyFirstApp.dll
+C:\Users\kapae\Desktop\MyFirstApp\MyFirstApp\obj\Debug\net8.0\MyFirstApp.sourcelink.json

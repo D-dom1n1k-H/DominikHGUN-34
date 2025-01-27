@@ -2,53 +2,58 @@
 {
     static void Main(string[] args)
     {
-    
+        Console.WriteLine("& = 1");
+        Console.WriteLine("| = 2");
+        Console.WriteLine("^ = 3");
+
         if (!Int32.TryParse(Console.ReadLine(), out var a))
         {
-            Console.WriteLine("Not a number!");
-            return;
+        Console.WriteLine("It isn't a number");
+        return;
         }
 
         if (!Int32.TryParse(Console.ReadLine(), out var b))
         {
-            Console.WriteLine("Not a number!");
-            return;
+        Console.WriteLine("It isn't a number");
+        return;
         }
-        
-        var s = Console.ReadLine();
-        var boolVar = true;
-
-        if (s.Length == 0 || s.Length > 1 && !boolVar)
-
+        if (!Int32.TryParse(Console.ReadLine(), out var c))
         {
-            Console.WriteLine("Wrong sign!");
+            Console.WriteLine("It isn't a number");
             return;
         }
 
-        switch (s[0])
+        if (c == 1)
         {
-            case '+':
-                Console.WriteLine("Result of {0} + {1} = {2}", a, b, a + b);
-                break;
-            case '-':
-                Console.WriteLine("Result of {0} - {1} = {2}", a, b, a - b);
-                break;
-            case '*':
-                Console.WriteLine("Result of {0} * {1} = {2}", a, b, a * b);
-                break;
-            case '/':
-                Console.WriteLine("Result of {0} / {1} = {2}", a, b, a / b);
-                break;
-            case '%':
-                Console.WriteLine("Result of {0} % {1} = {2}", a, b, a % b);
-                break;
+            int f = a & b;
+            Console.WriteLine(Convert.ToString(f, 10));
+            Console.WriteLine(Convert.ToString(f, 2));
+            Console.WriteLine(Convert.ToString(f, 16));
+            return;
+        }
+        if (c == 2)
+        {
+            int f = a | b;
+            Console.WriteLine(Convert.ToString(f, 10));
+            Console.WriteLine(Convert.ToString(f, 2));
+            Console.WriteLine(Convert.ToString(f, 16));
+            return;
+        }
+        if (c == 3)
+        {
+            int f = a ^ b;
+            Console.WriteLine(Convert.ToString(f, 10));
+            Console.WriteLine(Convert.ToString(f, 2));
+            Console.WriteLine(Convert.ToString(f, 16));
+            return;
+        }
+        else
+        {
+            Console.WriteLine("Last sign can be only 1,2 or 3");
+            return ;
         }
 
-        //Console.WriteLine("Result of {0} + {1} = {2}",a ,b ,a + b);
-        //Console.WriteLine("Result of {0} - {1} = {2}",a, b, a - b);
-        //Console.WriteLine("Result of {0} * {1} = {2}",a, b, a * b);
-        //Console.WriteLine("Result of {0} / {1} = {2}",a, b, a / b);
-        //Console.WriteLine("Result of {0} % {1} = {2}",a, b, a % b);
+
 
     }
 }

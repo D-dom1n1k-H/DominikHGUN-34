@@ -1,133 +1,37 @@
-﻿using System.Net.Http.Headers;
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
-
-        //Первый вариант с swith/case (основной)
-
     {
-        Console.WriteLine("1 = &");
-        Console.WriteLine("2 = |");
-        Console.WriteLine("3 = ^");
+        int[] ex1 = new[] { 0, 1, 1, 2, 3, 5, 8, 13 };
 
-        var a02 = Console.ReadLine();
-        if (!int.TryParse(a02, out var a))
+        string[] ex2 = new[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
+        int[][] ex3 = { new[] { 2, 3, 4 }, new[] { 4, 9, 16 }, new[] { 8, 27, 64 } };
+
+
+        double[][] ex4 = new double[3][];
+
+
+        ex4[0] = new double[] { 1, 2, 3, 4, 5 };
+
+        ex4[1] = new double[] { Math.E, Math.PI };
+
+        ex4[2] = new double[]
         {
-            Console.WriteLine("Is isn't a number");
-            return;
-        }
-        var b02 = Console.ReadLine();
-        if (!int.TryParse(b02, out var b))
-        {
-            Console.WriteLine("Is isn't a number");
-            return;
-        }
-        var c02 = Console.ReadLine();
-        if (!int.TryParse(c02, out var c))
-        {
-            Console.WriteLine("Is isn't a number");
-            return;
-        }
+           Math.Log10 (1),
+           Math.Log10 (10),
+           Math.Log10 (100),
+           Math.Log10 (1000)
+        };
 
 
 
-        switch (c)
-        {
-            case 1:
-                int r01 = a & b;
-                Console.WriteLine(Convert.ToString(r01, 10));
-                Console.WriteLine(Convert.ToString(r01, 2));
-                Console.WriteLine(Convert.ToString(r01, 16));
-                break;
+        int[] array = { 1, 2, 3, 4, 5 };
+        int[] array2 = { 7, 8, 9, 10, 11, 12, 13, 0, 0, 0 }; //Я добавил в массив array2 три нолика в конце чтобы не удалять 11, 12 и 13. А массив на 10 элементов сделать не получилось.
 
+        Array.Copy(array, 0, array2, 7, 3);
 
-            case 2:
-                int r02 = a | b;
-                Console.WriteLine(Convert.ToString(r02, 10));
-                Console.WriteLine(Convert.ToString(r02, 2));
-                Console.WriteLine(Convert.ToString(r02, 16));
-                break;
-
-            case 3:
-                int r03 = a ^ b;
-                Console.WriteLine(Convert.ToString(r03, 10));
-                Console.WriteLine(Convert.ToString(r03, 2));
-                Console.WriteLine(Convert.ToString(r03, 16));
-                break;
-
-            default:
-                Console.WriteLine("Third number can be only 1,2 or 3");
-                break;
-
-
-
-                //Второй вариант с if
-
-                //Console.WriteLine("1 = &");
-                //Console.WriteLine("2 = |");
-                //Console.WriteLine("3 = ^");
-
-                //var a02 = Console.ReadLine();
-                //if (!int.TryParse(a02, out var a))
-                //{
-                //    Console.WriteLine("Is isn't a number");
-                //    return;
-                //}
-                //var b02 = Console.ReadLine();
-                //if (!int.TryParse(b02, out var b))
-                //{
-                //    Console.WriteLine("Is isn't a number");
-                //    return;
-                //}
-                //var c02 = Console.ReadLine();
-                //if (!int.TryParse(c02, out var c))
-                //{
-                //    Console.WriteLine("Is isn't a number");
-                //    return;
-                //}
-
-
-
-                //switch (c)
-                //{
-                //    case 1:
-                //        int r01 = a & b;
-                //        Console.WriteLine(Convert.ToString(r01, 10));
-                //        Console.WriteLine(Convert.ToString(r01, 2));
-                //        Console.WriteLine(Convert.ToString(r01, 16));
-                //        break;
-
-
-                //    case 2:
-                //        int r02 = a | b;
-                //        Console.WriteLine(Convert.ToString(r02, 10));
-                //        Console.WriteLine(Convert.ToString(r02, 2));
-                //        Console.WriteLine(Convert.ToString(r02, 16));
-                //        break;
-
-                //    case 3:
-                //        int r03 = a ^ b;
-                //        Console.WriteLine(Convert.ToString(r03, 10));
-                //        Console.WriteLine(Convert.ToString(r03, 2));
-                //        Console.WriteLine(Convert.ToString(r03, 16));
-                //        break;
-
-                //    default:
-                //        Console.WriteLine("Third number can be only 1,2 or 3");
-                //        break;
-
-                }
-
+        Array.Resize(ref array, 10);
+        Console.WriteLine(array[9]);
     }
-
 }
-
-
-
-
-
-
-
-
-

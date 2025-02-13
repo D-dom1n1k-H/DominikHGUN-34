@@ -1,37 +1,79 @@
-﻿class Program
+﻿namespace HomeWork
 {
-    static void Main(string[] args)
+    internal class Program
     {
-        int[] ex1 = new[] { 0, 1, 1, 2, 3, 5, 8, 13 };
-
-        string[] ex2 = new[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-
-        int[][] ex3 = { new[] { 2, 3, 4 }, new[] { 4, 9, 16 }, new[] { 8, 27, 64 } };
-
-
-        double[][] ex4 = new double[3][];
-
-
-        ex4[0] = new double[] { 1, 2, 3, 4, 5 };
-
-        ex4[1] = new double[] { Math.E, Math.PI };
-
-        ex4[2] = new double[]
+        static void Main(string[] args)
         {
-           Math.Log10 (1),
-           Math.Log10 (10),
-           Math.Log10 (100),
-           Math.Log10 (1000)
-        };
 
 
+            //Зд 1
 
-        int[] array = { 1, 2, 3, 4, 5 };
-        int[] array2 = { 7, 8, 9, 10, 11, 12, 13, 0, 0, 0 }; //Я добавил в массив array2 три нолика в конце чтобы не удалять 11, 12 и 13. А массив на 10 элементов сделать не получилось.
+            //for (int i = 0; i < 8;)
+            //{
+            //    Console.WriteLine("0"); i++;
+            //    Console.WriteLine("1"); i++;
+            //    int first = 1;
+            //    Console.WriteLine(first);
+            //    int second = first + first;
+            //    Console.WriteLine(second); i++;
+            //    int third = first + second; i++;
+            //    Console.WriteLine(third); i++;
+            //    int fourth = second + third;
+            //    Console.WriteLine(fourth); i++;
+            //    int fifth = third + fourth;
+            //    Console.WriteLine(fifth); i++;
+            //    int sixth = fourth + fifth;
+            //    Console.WriteLine(sixth); i++;
+            //    int seventh = fifth + sixth;
+            //    Console.WriteLine(seventh); i++;
+            //    int eight = sixth + seventh;
+            //    Console.WriteLine(eight); i++;
+            //}
 
-        Array.Copy(array, 0, array2, 7, 3);
 
-        Array.Resize(ref array, 10);
-        Console.WriteLine(array[9]);
+            //Зд 2
+
+            //for (int i = 0; i < 20;)
+            //{
+            //    i++; i++;
+            //    Console.WriteLine(i);
+            //}
+
+
+            //Зд 3
+
+            //for (int i = 1; i < 6;)
+            //{
+
+            //    for (int j = 1; j < 6;)
+            //    {
+            //        Console.Write($"{i} * {j} = {i * j}    ");
+            //        j++;
+            //    }
+            //    Console.WriteLine();
+            //    i++;
+
+
+            //Зд 4 
+
+            //string password = "qwerty";
+
+            //do
+            //{
+            //    Console.Write("Enter the password: ");
+            //    string input = Console.ReadLine();
+
+            //    if (input == password)
+            //    {
+            //        Console.WriteLine("You entered the correct password!");
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("You entered the wrong password, please try again...");
+            //    }
+
+            //} while (true);
+        }
     }
 }

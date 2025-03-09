@@ -1,69 +1,45 @@
-﻿namespace HomeWork
+﻿
+namespace classes
 {
-    internal class Program
+    // Дз по Классам
+    public class Unit
     {
-        static void Main(string[] args)
+        public string Name { get; }
+        private float _health;
+
+        public float Health => _health;
+        public int Damage { get; }
+        public float Armor;
+
+        public Unit() : this("Unknown Unit", 5, 0.6f) { }
+
+        public Unit(string name, int damage, float armor)
         {
+            Name = name;
+            Damage = damage;
+            Armor = armor;
+            _health = 5f;
+        }
 
-
-            //Зд 1
-
-            int first = 0;
-            int second = 1;
-
-            Console.WriteLine(first);
-            Console.WriteLine(second);
-
-            for (int i = 2; i < 9; i++)
+        public float GetRealHealth()
+        {
+            return _health * (1 + Armor);
+        }
+        public bool SetDamage(float value)
+        {
+            _health -= value * Armor;
+            return _health <= 0f;
+        }
+        class Program
+        {
+            static void Main(string[] args)
             {
-                int next = first + second;
-                Console.WriteLine(next);
-                first = second;
-                second = next;
-            }
-
-
-            //Зд 2
-
-            for (int i = 0; i < 21; i++, i++)
-            {
-                Console.WriteLine(i);
-            }
-
-
-            //Зд 3
-
-            for (int i = 1; i < 6; i++, i++)
-            {
-
-                for (int j = 1; j < 6; j++, j++)
-                {
-                    Console.Write($"{i} * {j} = {i * j}    ");
-
-                }
-                Console.WriteLine();
-
-
-                //Зд 4 
-
-                string password = "qwerty";
-
-                do
-                {
-                    Console.Write("Enter the password: ");
-                    string input = Console.ReadLine();
-
-                    if (input == password)
-                    {
-                        Console.WriteLine("You entered the correct password!");
-                        return;
-                    }
-                    else
-                    {
-                        Console.WriteLine("You entered the wrong password, please try again...");
-                    }
-
-                }while (true);
+                Unit New_unit = new Unit();
+                Console.WriteLine(New_unit.Name);
+                Console.WriteLine(New_unit.Damage);
+                Console.WriteLine(New_unit.Armor);
+                Console.WriteLine(New_unit.GetRealHealth());
+                Console.WriteLine(New_unit.SetDamage(0));
             }
         }
     }

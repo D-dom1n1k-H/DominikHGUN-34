@@ -1,4 +1,5 @@
 ﻿
+using System;
 using RoomNamespace;
 using UnitNamespace;
 using WeaponNamespace;
@@ -30,7 +31,7 @@ namespace DungeonNamespace
                 Console.WriteLine($"Room {i}:");
                 Console.WriteLine("");
                 Unit unit1 = new Unit(UnitNames[rand.Next(UnitNames.Length)]);
-                Weapon weapon1 = new Weapon(WeaponNames[rand.Next(WeaponNames.Length)], 5, 12);
+                Weapon weapon1 = new Weapon(WeaponNames[rand.Next(WeaponNames.Length)]);
                 rooms[0] = new Room(unit1, weapon1);
 
                 Console.WriteLine($"Unit in room: {rooms[0].Unit.Name}");

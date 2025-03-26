@@ -54,7 +54,7 @@ namespace Program
             Console.WriteLine("");
 
             Unit warrior = new Unit("Warrior");
-            Weapon sword = new Weapon("Sword", 10, 20);
+            Weapon sword = new Weapon("Sword");
             Room battleRoom = new Room(warrior, sword);
 
             Console.WriteLine($"Unit in room: {battleRoom.Unit.Name}");

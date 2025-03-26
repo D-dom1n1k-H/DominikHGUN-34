@@ -1,4 +1,6 @@
 ﻿
+using IntervalNamespace;
+
 namespace UnitNamespace
 {
     public class Unit
@@ -11,11 +13,12 @@ namespace UnitNamespace
         public float Armor { get; }
 
         public Unit() : this("Unknown Unit") { }
+        Interval Unit_interval = new Interval(1, 5);
 
         public Unit(string name)
         {
             Name = name;
-            Damage = 5;
+            Damage = Unit_interval.Get;
             Armor = 0.6f;
         }
 
@@ -33,10 +36,3 @@ namespace UnitNamespace
 }
 
 
-
-namespace MyFirstApp
-{
-    class Unit
-    {
-    }
-}

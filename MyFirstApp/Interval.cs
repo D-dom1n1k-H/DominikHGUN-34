@@ -4,16 +4,16 @@ namespace IntervalNamespace
 
     struct Interval
     {
-        public int Min { get; set; }
-        public int Max { get; set; }
+        public int Min { get; }
+        public int Max { get; }
         public int Get { get; private set; }
 
         public Interval(int minValue, int maxValue)
         {
             Random rand = new Random();
 
-            minValue = rand.Next(0, 100);
-            maxValue = rand.Next(0, 100);
+            minValue = rand.Next(1, 20);
+            maxValue = rand.Next(1, 20);
 
             if (minValue > maxValue)
             {

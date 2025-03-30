@@ -1,77 +1,55 @@
-﻿using DungeonNamespace;
-using IntervalNamespace;
-using RoomNamespace;
-using UnitNamespace;
-using WeaponNamespace;
+﻿
+using System.Collections.Generic;
+using Task01;
+using Task02;
+using Task03;
 
 namespace Program
 {
-    // Дз по Классам и не только
-
     class Program
     {
         static void Main(string[] args)
         {
+            bool entered = false;
 
-            Console.WriteLine("Class Weapon:");
-            Console.WriteLine("");
-            Weapon New_weapon = new Weapon();
+            Console.WriteLine("Hi user!");
+            Console.WriteLine("This program contains 3 tasks: ");
+            Console.WriteLine(""); //разделитель между строками
+            Console.WriteLine("Choose the task you want to run: ");
+            Console.WriteLine("1. Task01 (List)");
+            Console.WriteLine("2. Task02 (Dictionary)");
+            Console.WriteLine("3. Task03 (LinkedList)");
+            Console.WriteLine("Enter 1/2/3");
+            Console.WriteLine(""); //разделитель между строками
+            int task = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine($"Name = {New_weapon.Name}");
-            Console.WriteLine($"MinDamage = {New_weapon.MinDamage}");
-            Console.WriteLine($"MaxDamage = {New_weapon.MaxDamage}");
-            Console.WriteLine($"Durability = {New_weapon.Durability}");
-            Console.WriteLine($"GetDamage = {New_weapon.GetDamage()}");
-            Console.WriteLine("");
-
-            Console.WriteLine("-----------------------------------------------------");
-
-            Console.WriteLine("Class Unit:");
-            Console.WriteLine("");
-            Unit New_unit = new Unit();
-
-            Console.WriteLine($"Name = {New_unit.Name}");
-            Console.WriteLine($"Damage = {New_unit.Damage}");
-            Console.WriteLine($"Armor = {New_unit.Armor}");
-            Console.WriteLine($"GetRealHealth = {New_unit.GetRealHealth()}");
-            Console.WriteLine($"SetDamage = {New_unit.SetDamage(0)}");
-            Console.WriteLine("");
-
-            Console.WriteLine("-----------------------------------------------------");
-
-            Console.WriteLine("Struct Interval:");
-            Console.WriteLine("");
-            Interval new_interval = new Interval(10, 5);
-
-            Console.WriteLine($"Min = {new_interval.Min}");
-            Console.WriteLine($"Max = {new_interval.Max}");
-            Console.WriteLine($"Get = {new_interval.Get}");
-
-            Console.WriteLine("");
-            Console.WriteLine("-----------------------------------------------------");
-
-            Console.WriteLine("Struct Room:");
-            Console.WriteLine("");
-
-            Unit warrior = new Unit("Warrior");
-            Weapon sword = new Weapon("Sword");
-            Room battleRoom = new Room(warrior, sword);
-
-            Console.WriteLine($"Unit in room: {battleRoom.Unit.Name}");
-            Console.WriteLine($"Weapon in room: {battleRoom.Weapon.Name}");
-
-            Console.WriteLine("");
-            Console.WriteLine("-----------------------------------------------------");
-
-            Console.WriteLine("Class Dungeon:");
-            Console.WriteLine("");
-
-            Dungeon new_dungeon = new Dungeon();
-            new_dungeon.ShowRooms();
-
+            while (entered == false)
+            {
+                switch (task)
+                {
+                    case 1:
+                        MyList myList = new MyList();
+                        myList.TaskLoop();
+                        entered = true;
+                        break;
+                    case 2:
+                        MyDictionary myDictionary = new MyDictionary();
+                        myDictionary.TaskLoop();
+                        entered = true;
+                        break;
+                    case 3:
+                        MyLinkedList<int> myLinkedList = new MyLinkedList<int>();
+                        myLinkedList.TaskLoop();
+                        entered = true;
+                        break;
+                    default:
+                        Console.WriteLine("You entered a wrong number, please enter 1, 2 or 3");
+                        task = Convert.ToInt32(Console.ReadLine());
+                        break;
+                }
+            }
         }
     }
 }
-
 
 
